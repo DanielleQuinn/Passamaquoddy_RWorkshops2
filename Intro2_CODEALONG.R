@@ -170,12 +170,22 @@ class(test_date)
 # Goal: Paste year, month, and day together and
 # pass it to the ymd() function to format it as a date
 
-# ---- Capstone ----
-# Choose five states.
-# Generate a table using a {dplyr} workflow that describes, for each state:
+# ---- Capstone 1 ----
+# 1. Choose five states
+# 2. Generate a table using a {dplyr} workflow that describes, for each state:
 # (a) the number of parks
 # (b) the smallest area
 # (c) the last time a new park was established
 # (d) the average entrance fee (per person)
 # (e) extra challenge: how many free parks it has
 ##### hint: think about characteristics of data classes
+
+# ---- Capstone 2 ----
+# 1. Import the fish.txt data
+# 2. Filter the data to only keep:
+## (a) records where habitat is "pool"
+## (b) year is between 1999 and 2012, inclusive
+## (c) common_name is "Central Stoneroller"
+# 3. Calculate the minimum, maximum, and average catch
+# by year, site, and habitat
+# 4. Store the resulting table in an object called "plotme"

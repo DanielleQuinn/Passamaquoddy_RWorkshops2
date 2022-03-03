@@ -279,9 +279,9 @@ parks_tb <- parks_tb %>%
 
 glimpse(parks_tb)
 
-# ---- Capstone ----
-# Choose five states.
-# Generate a table using a {dplyr} workflow that describes, for each state:
+# ---- Capstone 1 ----
+# 1. Choose five states
+# 2. Generate a table using a {dplyr} workflow that describes, for each state:
 # (a) the number of parks
 # (b) the smallest area
 # (c) the last time a new park was established
@@ -296,3 +296,22 @@ parks_tb %>%
             last_established = max(year),
             average_cost = mean(per_person),
             free_parks = sum(free))
+
+# ---- Capstone 2 ----
+# 1. Import the fish.txt data
+# 2. Filter the data to only keep:
+## (a) records where habitat is "pool"
+## (b) year is between 1999 and 2012, inclusive
+## (c) common_name is "Central Stoneroller"
+# 3. Calculate the minimum, maximum, and average catch
+# by year, site, and habitat
+# 4. Store the resulting table in an object called "plotme"
+
+plotme <- fish %>%
+  filter(common_name == "Central Stoneroller") %>%
+  group_by(year, site, habitat) %>%
+  summarise(catch_average = mean(catch),
+            catch_minimum = min(catch),
+            catch_maximum = max(catch)) %>%
+  filter(habitat == "pool", between(year, 1999, 2012))
+
